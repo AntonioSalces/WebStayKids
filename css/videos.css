@@ -1,25 +1,203 @@
-.video{
-    display: flex;
-    width: 50%;
-    height: auto ;
-    float: left;
-    justify-content: center;
-    margin-bottom: 50px;
-    flex-direction: column;
-    align-items: center;
-    align-self: center;
+/* ===== VIDEO PAGE STYLES ===== */
+
+/* Videos Container */
+.videos-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    padding: 40px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-video{
-    width: 600px;
+/* Video Card */
+.video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    padding: 25px;
+    transition: var(--transition);
+    animation: fadeInUp 0.6s ease-out both;
+}
+
+.video:nth-child(1) { animation-delay: 0.1s; }
+.video:nth-child(2) { animation-delay: 0.2s; }
+.video:nth-child(3) { animation-delay: 0.3s; }
+.video:nth-child(4) { animation-delay: 0.4s; }
+
+.video:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-gold);
+    border-color: var(--accent-gold);
+}
+
+/* Video Title */
+.video .texto {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0 0 20px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-gold);
+    width: 100%;
+}
+
+.video .texto:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Video Player */
+video {
+    width: 100%;
+    max-width: 600px;
     height: auto;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--border-color);
+    transition: var(--transition);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
 }
 
-#iframe{
+video:hover {
+    border-color: var(--accent-gold);
+    box-shadow: 0 5px 30px rgba(212, 175, 55, 0.3);
+}
+
+/* YouTube Embed Section */
+#iframe {
     display: flex;
-    justify-content: center;
-    clear: both;
     flex-direction: column;
     align-items: center;
-    align-self: center;
+    padding: 40px 5%;
+    max-width: 1000px;
+    margin: 0 auto 60px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    animation: fadeInUp 0.6s ease-out 0.5s both;
+}
+
+#iframe:hover {
+    border-color: var(--accent-gold);
+    box-shadow: var(--shadow-gold);
+}
+
+#iframe .texto {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0 0 20px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--accent-gold);
+}
+
+#iframe .texto:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+#iframe iframe {
+    border-radius: var(--border-radius);
+    border: 2px solid var(--border-color);
+    transition: var(--transition);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    max-width: 100%;
+}
+
+#iframe:hover iframe {
+    border-color: var(--accent-gold);
+    box-shadow: 0 5px 30px rgba(212, 175, 55, 0.3);
+}
+
+/* Page Header */
+.page-header {
+    text-align: center;
+    padding: 40px 5%;
+}
+
+.page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--text-light);
+    position: relative;
+    display: inline-block;
+}
+
+.page-header h1::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: var(--accent-gold);
+    margin: 15px auto 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .videos-container {
+        grid-template-columns: 1fr;
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 768px) {
+    .videos-container {
+        padding: 20px 3%;
+        gap: 30px;
+    }
+
+    .video {
+        padding: 20px;
+    }
+
+    .video .texto {
+        font-size: 1.3rem;
+    }
+
+    #iframe {
+        padding: 25px 3%;
+        margin: 0 3% 40px;
+    }
+
+    #iframe .texto {
+        font-size: 1.5rem;
+    }
+
+    #iframe iframe {
+        width: 100%;
+        height: 280px;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .video .texto {
+        font-size: 1.1rem;
+    }
+
+    .video {
+        padding: 15px;
+    }
+
+    #iframe .texto {
+        font-size: 1.2rem;
+    }
+
+    #iframe iframe {
+        height: 200px;
+    }
+
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
 }
