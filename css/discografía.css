@@ -1,76 +1,256 @@
+/* ===== DISCOGRAPHY PAGE STYLES ===== */
+
+/* Page Container */
+.todo {
+    padding: 40px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Table Styles */
 table {
     width: 100%;
     border-collapse: separate;
+    border-spacing: 15px;
     text-align: center;
-    table-layout: fixed;
-
 }
 
+thead tr th {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--text-light);
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    padding: 25px;
+    border-radius: var(--border-radius-lg);
+    border: 2px solid var(--accent-gold);
+    box-shadow: var(--shadow-gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Table Cells */
 th, td {
-    border: 5px inset white;
-    padding: 8px;
+    padding: 25px;
     text-align: center;
-    border-collapse: separate;
-    border-radius: 20px
+    border-radius: var(--border-radius);
+    vertical-align: top;
 }
 
-th {
-    text-align: center;
-    color: rgb(218, 208, 208); 
-    font-size: 30px;
-    font-family: "Caudex", serif; 
-    background-color: rgba(119, 0, 0, 0.7);
-
+tbody td {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
 }
 
-.album{
-    width: 50%;
-    height: auto;
-    box-shadow: 0px 0px 100px rgba(212, 175, 55, 0.5);
-    margin-bottom: 10px;
-    position: static;
+tbody td:hover {
+    border-color: var(--accent-gold);
+    box-shadow: var(--shadow-gold);
+    transform: translateY(-5px);
 }
 
-.album:hover{
-    transform: scale(1.1);
+/* Album List Cell */
+tbody td:first-child {
+    background: linear-gradient(145deg, var(--bg-card), rgba(30, 0, 0, 0.9));
+    text-align: left;
+    padding: 30px;
 }
 
-p{
-    color: rgb(218, 208, 208); 
-    font-size: 30px;
-    font-family: "Caudex", serif; 
+tbody td:first-child p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--accent-gold);
+    font-weight: 600;
 }
 
-li{
-    text-align: center;
-    color: white;
-    font-size: 30px;
+/* Ordered List */
+ol {
+    text-align: left;
+    padding-left: 25px;
+    margin: 0;
 }
 
-ol{
-    text-align: center;
+li {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    padding: 8px 0;
+    transition: var(--transition);
+    list-style-type: decimal;
 }
 
-#goLive{
-    box-shadow: 0px 0px 100px rgb(255, 255, 255, 1);
+li:hover {
+    color: var(--accent-gold);
+    padding-left: 10px;
 }
 
-#noeasy{
-    box-shadow: 0px 0px 100px rgb(76, 0, 255, 1);
+li p {
+    display: inline;
+    font-size: 1.1rem;
+    margin: 0;
 }
 
-#theSound{
-    box-shadow: 0px 0px 100px rgb(255, 0, 208);
+/* Album Text */
+p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 15px;
 }
 
-#fiveStars{
-    box-shadow: 0px 0px 100px rgb(0, 0, 0);
+/* Album Title */
+td > p.texto {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-gold);
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 10px 0;
+    margin-bottom: 15px;
 }
 
-#giant{
-    box-shadow: 0px 0px 100px rgb(57, 57, 57);
+td > p.texto:hover {
+    transform: none;
+    box-shadow: none;
 }
 
-audio{
-    margin-bottom: 10px;
+/* Album Cover Images */
+.album {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    border: 3px solid var(--border-color);
+    margin-bottom: 20px;
+    transition: var(--transition);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.album:hover {
+    transform: scale(1.08) rotate(2deg);
+    border-color: var(--accent-gold);
+}
+
+/* Individual Album Glow Effects */
+#goLive {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4), 0 0 60px rgba(255, 255, 255, 0.2);
+}
+
+#goLive:hover {
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.6), 0 0 80px rgba(255, 255, 255, 0.3);
+}
+
+#noeasy {
+    box-shadow: 0 0 30px rgba(76, 0, 255, 0.4), 0 0 60px rgba(76, 0, 255, 0.2);
+}
+
+#noeasy:hover {
+    box-shadow: 0 0 40px rgba(76, 0, 255, 0.6), 0 0 80px rgba(76, 0, 255, 0.3);
+}
+
+#theSound {
+    box-shadow: 0 0 30px rgba(255, 0, 208, 0.4), 0 0 60px rgba(255, 0, 208, 0.2);
+}
+
+#theSound:hover {
+    box-shadow: 0 0 40px rgba(255, 0, 208, 0.6), 0 0 80px rgba(255, 0, 208, 0.3);
+}
+
+#fiveStars {
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.4), 0 0 60px rgba(212, 175, 55, 0.2);
+}
+
+#fiveStars:hover {
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.6), 0 0 80px rgba(212, 175, 55, 0.3);
+}
+
+#giant {
+    box-shadow: 0 0 30px rgba(100, 100, 100, 0.4), 0 0 60px rgba(100, 100, 100, 0.2);
+}
+
+#giant:hover {
+    box-shadow: 0 0 40px rgba(100, 100, 100, 0.6), 0 0 80px rgba(100, 100, 100, 0.3);
+}
+
+/* Audio Player */
+audio {
+    width: 100%;
+    max-width: 200px;
+    height: 40px;
+    border-radius: 25px;
+    margin-top: 10px;
+}
+
+audio::-webkit-media-controls-panel {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead tr th {
+        font-size: 2rem;
+    }
+
+    tbody td {
+        margin-bottom: 20px;
+    }
+
+    .album {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .todo {
+        padding: 20px 3%;
+    }
+
+    thead tr th {
+        font-size: 1.5rem;
+        padding: 20px;
+    }
+
+    td > p.texto {
+        font-size: 1.3rem;
+    }
+
+    .album {
+        width: 180px;
+        height: 180px;
+    }
+
+    audio {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    thead tr th {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+
+    td > p.texto {
+        font-size: 1.1rem;
+    }
+
+    .album {
+        width: 150px;
+        height: 150px;
+    }
+
+    tbody td:first-child p {
+        font-size: 1.1rem;
+    }
+
+    li, li p {
+        font-size: 1rem;
+    }
 }
